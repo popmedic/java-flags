@@ -15,3 +15,14 @@
      - networkCount
      - networkSuggestedCount
      - batteryPercentage
+
+## Run
+
+`./gradlew run`
+
+## Test
+
+`./gradlew test`
+
+## [Class Link](blob/main/app/src/main/java/com/scardina/Flags.java)
+
