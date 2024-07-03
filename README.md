@@ -24,5 +24,5 @@
 
 `./gradlew test`
 
-## [Class Link](blob/main/app/src/main/java/com/scardina/Flags.java)
+## [Class Link](app/src/main/java/com/scardina/Flags.java)
 
