@@ -24,5 +24,5 @@
 
 `./gradlew test`
 
-## [Class Link](app/src/main/java/com/scardina/Flags.java)
+## [Class Link](https://github.com/popmedic/java-flags/blob/main/app/src/main/java/com/scardina/Flags.java)
 
