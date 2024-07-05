@@ -57,9 +57,9 @@ public class Flags {
         int batteryPercentage
     ) throws Error {
         // Make sure the values are within limits
-        if (networkCount > 256) { throw new Error(NETWORK_COUNT_OOR_ERROR); } 
-        else if (networkSuggestedCount > 256) { throw new Error(NETWORK_SUGGESTED_COUNT_OOR_ERROR); } 
-        else if (batteryPercentage > 100) { throw new Error(BATTERY_PERCENTAGE_OOR_ERROR); }
+        if (networkCount > 256 || networkCount < 0) { throw new Error(NETWORK_COUNT_OOR_ERROR); } 
+        else if (networkSuggestedCount > 256 || networkSuggestedCount < 0) { throw new Error(NETWORK_SUGGESTED_COUNT_OOR_ERROR); } 
+        else if (batteryPercentage > 100 || batteryPercentage < 0) { throw new Error(BATTERY_PERCENTAGE_OOR_ERROR); }
         
         // set up value
         int value = ByteBuffer

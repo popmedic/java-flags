@@ -17,6 +17,13 @@ public class FlagsTest {
         assertEquals(Flags.NETWORK_COUNT_OOR_ERROR, error.getMessage());
     }
 
+    @Test public void whenNetworkCountNegOutOfRange_ErrorThrown() {
+        Error error = assertThrows(Error.class, () -> {
+            new Flags(false, false, false, false, false, false, false, -1, 0, 0);
+        });
+        assertEquals(Flags.NETWORK_COUNT_OOR_ERROR, error.getMessage());
+    }
+
     @Test public void whenNetworkCountIsSet_GetNetworkCountReturnSameValue() {
         assertEquals(
             32,
@@ -31,6 +38,13 @@ public class FlagsTest {
         assertEquals(Flags.NETWORK_SUGGESTED_COUNT_OOR_ERROR, error.getMessage());
     }
 
+    @Test public void whenNetworkSuggestedCountNegOutOfRange_ErrorThrown() {
+        Error error = assertThrows(Error.class, () -> {
+            new Flags(false, false, false, false, false, false, false, 0, -10, 0);
+        });
+        assertEquals(Flags.NETWORK_SUGGESTED_COUNT_OOR_ERROR, error.getMessage());
+    }
+
     @Test public void whenNetworkSuggestedCountIsSet_GetNetworkSuggestedCountReturnSameValue() {
         assertEquals(
             23,
@@ -41,6 +55,13 @@ public class FlagsTest {
     @Test public void whenBatteryPercentageOutOfRange_ErrorThrown() {
         Error error = assertThrows(Error.class, () -> {
             new Flags(false, false, false, false, false, false, false, 0, 0, 900);
+        });
+        assertEquals(Flags.BATTERY_PERCENTAGE_OOR_ERROR, error.getMessage());
+    }
+
+    @Test public void whenBatteryPercentageNegOutOfRange_ErrorThrown() {
+        Error error = assertThrows(Error.class, () -> {
+            new Flags(false, false, false, false, false, false, false, 0, 0, -9);
         });
         assertEquals(Flags.BATTERY_PERCENTAGE_OOR_ERROR, error.getMessage());
     }
