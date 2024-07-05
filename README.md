@@ -18,7 +18,26 @@
 
 ## Run
 
-`./gradlew run`
+`./gradlew run --args='<arguments>'`
+
+### arguments
+```bash
+# will set the flags value by a int
+-value
+# if option is present, sets value to true, leave out for false
+-registered 
+-registered
+-userDisabled
+-suspended
+-wifi
+-airlytics
+-sim
+-eventsLogging
+# sets the value for the flag, 0 is default
+-networkCount
+-networkSuggestedCount
+-batteryPercentage
+```
 
 ## Test
 
