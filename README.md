@@ -39,6 +39,11 @@
 -batteryPercentage
 ```
 
+### Example
+
+```bash
+
+```
 ## Test
 
 `./gradlew test`

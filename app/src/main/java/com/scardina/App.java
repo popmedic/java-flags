@@ -19,7 +19,7 @@ public class App {
         .addOption("wifi", false, null)
         .addOption("airlytics", false, null)
         .addOption("sim", false, null)
-        .addOption("eventsLogging", false, null)
+        .addOption("eventLogging", false, null)
         .addOption("networkCount", true, null)
         .addOption("networkSuggestedCount", true, null)
         .addOption("batteryPercentage", true, null)

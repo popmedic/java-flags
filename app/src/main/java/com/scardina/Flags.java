@@ -15,7 +15,7 @@ import java.nio.ByteBuffer;
  *     - airlytics
  *     - sim
  *     - eventsLogging
- * - 3 values between 0-255
+ * - 3 values between 0-127
  *     - networkCount
  *     - networkSuggestedCount
  *     - batteryPercentage
@@ -35,10 +35,13 @@ public class Flags {
     private static final int NETWORK_SUGGESTED_COUNT_INDEX = 1;
     private static final int BATTERY_PERCENTAGE_INDEX = 2;
     private static final int FLAGS_INDEX = 3;
+    // MAX Sizes
+    private static final int MAX_NETWORKCOUNTS = 128;
+    private static final int MAX_PERCENTAGE = 100;
 
     // -- Public Constants
-    public static final String NETWORK_COUNT_OOR_ERROR = "network count out of range, must be 0 - 255";
-    public static final String NETWORK_SUGGESTED_COUNT_OOR_ERROR = "network suggested count out of range, must be 0 - 255";
+    public static final String NETWORK_COUNT_OOR_ERROR = "network count out of range, must be 0 - 127";
+    public static final String NETWORK_SUGGESTED_COUNT_OOR_ERROR = "network suggested count out of range, must be 0 - 127";
     public static final String BATTERY_PERCENTAGE_OOR_ERROR = "battery percentage out of range, must be 0 - 100";
 
     // -- Private final members
@@ -57,9 +60,9 @@ public class Flags {
         int batteryPercentage
     ) throws Error {
         // Make sure the values are within limits
-        if (networkCount > 256 || networkCount < 0) { throw new Error(NETWORK_COUNT_OOR_ERROR); } 
-        else if (networkSuggestedCount > 256 || networkSuggestedCount < 0) { throw new Error(NETWORK_SUGGESTED_COUNT_OOR_ERROR); } 
-        else if (batteryPercentage > 100 || batteryPercentage < 0) { throw new Error(BATTERY_PERCENTAGE_OOR_ERROR); }
+        if (networkCount > MAX_NETWORKCOUNTS || networkCount < 0) { throw new Error(NETWORK_COUNT_OOR_ERROR); } 
+        else if (networkSuggestedCount > MAX_NETWORKCOUNTS || networkSuggestedCount < 0) { throw new Error(NETWORK_SUGGESTED_COUNT_OOR_ERROR); } 
+        else if (batteryPercentage > MAX_PERCENTAGE || batteryPercentage < 0) { throw new Error(BATTERY_PERCENTAGE_OOR_ERROR); }
         
         // set up value
         int value = ByteBuffer
