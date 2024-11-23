@@ -49,5 +49,3 @@
 `./gradlew test`
 
 ## [Class Link](https://github.com/popmedic/java-flags/blob/main/app/src/main/java/com/scardina/Flags.java)
-
-[settings>general](prefs:root=General)
